@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background: #121214;
+}
+
+main {
+    position: relative;
+    grid-area: conteudo;
+}
+
+aside {
+    grid-area: imagem;
+
+    background-image: url(./assets/bg-working.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 100%;
+}
+
+body {
+    display: grid;
+    
+    height: 100vh;
+    grid-template-columns: 95vh 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'conteudo imagem';
+    
+    
+}
+
+.logo {
+    margin: 50px 0 92px 30px;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    margin-left: 36px;
+    margin-right: 36px;
+    gap: 9px;
+}
+
+.conteudo h1 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2em;
+    color: #08C05E
+}
+
+.conteudo h2 {
+    font-family: 'League Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4em;
+    color: #FFFFFF;
+}
+
+.conteudo p {
+    font-family: 'League Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #FFFFFF;
+}
+
+.formulario {
+    display: flex;
+    align-items: flex-end; 
+    width: fit-content;
+    margin: 50px 0 50px 36px;
+}
+
+.formulario .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    margin-bottom: 17px;
+    
+    font-family: 'League Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #A8A8A8;
+}
+
+.formulario input[type="email"]::-webkit-input-placeholder {
+    padding-left: 5px;
+}
+
+.formulario input[type="email"] {
+    width: 50vw;
+    height: 48px;
+    padding-left: 10px;
+    border: 0;
+    border-left: 5px solid #04D361;
+    
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+.formulario #botao {
+    height: 48px;
+    width: 48px;
+    background-image: url(./assets/button.svg);
+    border: 0;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.formulario #botao:active {
+    box-shadow: 0 0 0;
+}
+
+#link {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-left: 36px;
+    gap: 5px;
+    
+    text-decoration: none;
+    font-family: 'League Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #8257E5;
+}
+
+@media (max-width: 450px) {
+    .logo {
+        margin-top: 15px;
+        margin-bottom: 70px;
+    }
+
+    .logo img {
+        width: 60%;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .conteudo {
+        flex-wrap: wrap;
+    }
+    
+    main {
+        height: 100vh;
+    }
+    
+    aside {
+        display: none;
+    }
+
+    .formulario input[type="email"] {
+        width: 70vw;
+    }
+}
